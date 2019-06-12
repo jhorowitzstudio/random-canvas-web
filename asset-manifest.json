@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/brick-generator/static/css/main.1666a583.chunk.css",
-    "main.js": "/brick-generator/static/js/main.091b2ef3.chunk.js",
-    "main.js.map": "/brick-generator/static/js/main.091b2ef3.chunk.js.map",
-    "runtime~main.js": "/brick-generator/static/js/runtime~main.92424d49.js",
-    "runtime~main.js.map": "/brick-generator/static/js/runtime~main.92424d49.js.map",
-    "static/css/2.20d67eb1.chunk.css": "/brick-generator/static/css/2.20d67eb1.chunk.css",
-    "static/js/2.e748f981.chunk.js": "/brick-generator/static/js/2.e748f981.chunk.js",
-    "static/js/2.e748f981.chunk.js.map": "/brick-generator/static/js/2.e748f981.chunk.js.map",
-    "index.html": "/brick-generator/index.html",
-    "precache-manifest.3234024bb55d7f0836d96e1198f0fcc2.js": "/brick-generator/precache-manifest.3234024bb55d7f0836d96e1198f0fcc2.js",
-    "service-worker.js": "/brick-generator/service-worker.js",
-    "static/css/2.20d67eb1.chunk.css.map": "/brick-generator/static/css/2.20d67eb1.chunk.css.map",
-    "static/css/main.1666a583.chunk.css.map": "/brick-generator/static/css/main.1666a583.chunk.css.map"
+    "main.css": "/random-dots/static/css/main.1666a583.chunk.css",
+    "main.js": "/random-dots/static/js/main.34cd1d0b.chunk.js",
+    "main.js.map": "/random-dots/static/js/main.34cd1d0b.chunk.js.map",
+    "runtime~main.js": "/random-dots/static/js/runtime~main.b6bd2873.js",
+    "runtime~main.js.map": "/random-dots/static/js/runtime~main.b6bd2873.js.map",
+    "static/css/2.20d67eb1.chunk.css": "/random-dots/static/css/2.20d67eb1.chunk.css",
+    "static/js/2.540f7fe2.chunk.js": "/random-dots/static/js/2.540f7fe2.chunk.js",
+    "static/js/2.540f7fe2.chunk.js.map": "/random-dots/static/js/2.540f7fe2.chunk.js.map",
+    "index.html": "/random-dots/index.html",
+    "precache-manifest.326e5d47eff616b414cddc2eea947c17.js": "/random-dots/precache-manifest.326e5d47eff616b414cddc2eea947c17.js",
+    "service-worker.js": "/random-dots/service-worker.js",
+    "static/css/2.20d67eb1.chunk.css.map": "/random-dots/static/css/2.20d67eb1.chunk.css.map",
+    "static/css/main.1666a583.chunk.css.map": "/random-dots/static/css/main.1666a583.chunk.css.map"
   }
 }
