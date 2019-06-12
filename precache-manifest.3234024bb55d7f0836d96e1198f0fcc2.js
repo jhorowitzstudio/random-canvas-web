@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cbe7b718379ad199a988d7b20cd0499d",
+    "revision": "76b82da01df7aa376e57fef39f38334e",
     "url": "/brick-generator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/brick-generator/static/css/2.20d67eb1.chunk.css"
   },
   {
-    "revision": "c7c3e47398ed9b098964",
+    "revision": "a6b2827fca9602ee499f",
     "url": "/brick-generator/static/css/main.1666a583.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/brick-generator/static/js/2.e748f981.chunk.js"
   },
   {
-    "revision": "c7c3e47398ed9b098964",
-    "url": "/brick-generator/static/js/main.f017c110.chunk.js"
+    "revision": "a6b2827fca9602ee499f",
+    "url": "/brick-generator/static/js/main.091b2ef3.chunk.js"
   },
   {
     "revision": "02ea092fa571f8a70dd2",
