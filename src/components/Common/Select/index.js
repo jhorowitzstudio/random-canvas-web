@@ -1,16 +1,17 @@
 import React from 'react';
 
-const styles = {
-  select: {
-    margin: 10
-  }
-};
-
 export default props => {
-  const { handleChange, value, options, disabled, custom = false } = props;
+  const {
+    noLeftMargin,
+    handleChange,
+    value,
+    options,
+    disabled,
+    custom = false
+  } = props;
   return (
     <select
-      style={styles.select}
+      style={noLeftMargin ? { margin: '10px 10px 10px 0' } : { margin: 10 }}
       disabled={disabled}
       value={value}
       onChange={handleChange}

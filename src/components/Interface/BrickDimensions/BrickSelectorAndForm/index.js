@@ -76,6 +76,7 @@ export default class extends Component {
           }}
         >
           <Select
+            noLeftMargin
             handleChange={this.handleSelectChange}
             value={value}
             options={brickDimensions}
