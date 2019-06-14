@@ -16,6 +16,7 @@ export const colorHueModes = {
 };
 
 export const initialState = {
+  staggerBricks: true,
   brickHeight: brickDimensions.Standard.height,
   brickWidth: brickDimensions.Standard.width,
   brickMortar: brickDimensions.Standard.mortar,

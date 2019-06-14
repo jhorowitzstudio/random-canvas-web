@@ -22,6 +22,7 @@ export default class extends Component {
       colorMode,
       colorHueMode,
       mortarColor,
+      staggerBricks,
       save
     } = this.props;
     let { canvasHeight, canvasWidth } = this.props;
@@ -53,6 +54,7 @@ export default class extends Component {
           preserveAspectRatio="xMinYMax meet"
         >
           {brickLayer({
+            staggerBricks,
             canvasHeight,
             canvasWidth,
             brickHeight,

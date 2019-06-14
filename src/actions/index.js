@@ -1,3 +1,4 @@
+export const TOGGLE_STAGGER_BRICKS = 'TOGGLE_STAGGER_BRICKS';
 export const TOGGLE_BRICK_POPUP = 'TOGGLE_BRICK_POPUP';
 export const TOGGLE_CANVAS_POPUP = 'TOGGLE_CANVAS_POPUP';
 export const SET_BRICK_DIMENSIONS = 'SET_BRICK_DIMENSIONS';
@@ -11,6 +12,12 @@ export const SET_COLOR_HUE_MODE = 'SET_COLOR_HUE_MODE';
 export const ADD_TO_COLOR_ARRAY = 'ADD_TO_COLOR_ARRAY';
 export const REMOVE_FROM_COLOR_ARRAY = 'REMOVE_FROM_COLOR_ARRAY';
 export const EDIT_COLOR_IN_ARRAY = 'EDIT_COLOR_IN_ARRAY';
+
+export function toggleStaggerBricks() {
+  return {
+    type: TOGGLE_STAGGER_BRICKS
+  };
+}
 
 export function toggleBrickDimensionsPopup() {
   return {

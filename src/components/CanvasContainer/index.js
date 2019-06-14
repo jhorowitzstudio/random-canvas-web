@@ -30,6 +30,7 @@ const ColorPickersContainer = props => (
 );
 
 const mapStateToProps = ({
+  staggerBricks,
   canvasHeight,
   canvasWidth,
   brickHeight,
@@ -46,6 +47,7 @@ const mapStateToProps = ({
   colorHueMode,
   colorMode
 }) => ({
+  staggerBricks,
   canvasHeight,
   canvasWidth,
   brickHeight,

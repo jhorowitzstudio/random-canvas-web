@@ -1,5 +1,6 @@
 import { initialState } from '../constants/defaults';
 import {
+  TOGGLE_STAGGER_BRICKS,
   TOGGLE_BRICK_POPUP,
   TOGGLE_CANVAS_POPUP,
   SET_BRICK_DIMENSIONS,
@@ -17,6 +18,8 @@ import {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case TOGGLE_STAGGER_BRICKS:
+      return { ...state, staggerBricks: !state.staggerBricks };
     case TOGGLE_BRICK_POPUP:
       return { ...state, brickDimensionsPopup: !state.brickDimensionsPopup };
     case TOGGLE_CANVAS_POPUP:
