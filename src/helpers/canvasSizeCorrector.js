@@ -1,5 +1,5 @@
-export const trimCanvasHeight = (canvasDim, imageDim, mortar) =>
-  canvasDim - (canvasDim % (imageDim + mortar)) - mortar;
+export const trimCanvasHeight = (canvasDim, imageDim, border) =>
+  canvasDim - (canvasDim % (imageDim + border)) - border;
 
-export const trimCanvasWidth = (canvasDim, imageDim, mortar) =>
-  canvasDim - (canvasDim % (imageDim + mortar)) - mortar;
+export const trimCanvasWidth = (canvasDim, imageDim, border) =>
+  canvasDim - (canvasDim % (imageDim + border)) - border;

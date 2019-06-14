@@ -5,16 +5,14 @@ import ImageSelectorAndForm from './ImageSelectorAndForm';
 const ImageDimensions = props => <ImageSelectorAndForm {...props} />;
 
 const mapStateToProps = ({
-  staggerImages,
   imageHeight,
   imageWidth,
-  imageMortar,
+  imageBorder,
   imageDimensionsPopup
 }) => ({
-  staggerImages,
   imageHeight,
   imageWidth,
-  imageMortar,
+  imageBorder,
   imageDimensionsPopup
 });
 

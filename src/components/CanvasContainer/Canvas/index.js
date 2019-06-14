@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
+import xmlserializer from 'xmlserializer';
 import imageLayer from '../../../helpers/imageLayer';
 import {
   trimCanvasWidth,
@@ -7,47 +8,74 @@ import {
 } from '../../../helpers/canvasSizeCorrector';
 
 export default class extends Component {
+  // save = () => {
+  //   const { files } = this.props;
+  //   const svg = document.getElementById('imagewall');
+  //   // eslint-disable-next-line no-undef
+  //   const serializer = new XMLSerializer() || xmlserializer;
+  //   const svgBlob = new Blob([serializer.serializeToString(svg)], {
+  //     type: 'image/svg+xml'
+  //   });
+
+  //   const zip = new JSZip(); // create zip
+  //   zip.file('canvas.svg', svgBlob, { base64: true }); // create canvas file
+  //   const img = zip.folder('images'); // create folder
+  //   files.forEach((file, index) => {
+  //     img.file(`${file.name} ${index}`, file.blob); // save uploaded images
+  //   });
+
+  //   zip.generateAsync({ type: 'blob' }).then(content => {
+  //     saveAs(content, 'files.zip');
+  //   });
+  //   // endzip
+  // };
+
+  save = () => {
+    const svg = document.getElementById('imagewall');
+    // eslint-disable-next-line no-undef
+    const serializer = new XMLSerializer() || xmlserializer;
+    const svgBlob = new Blob([serializer.serializeToString(svg)], {
+      type: 'image/svg+xml'
+    });
+    const url = URL.createObjectURL(svgBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'imagewall.svg';
+    link.innerHTML = 'Click to download';
+    function fn() {
+      document.getElementById('download-div').innerHTML = '';
+    }
+    document.body.addEventListener('click', fn, true);
+      document.getElementById('download-div').innerHTML = '';
+    document.getElementById('download-div').appendChild(link);
+  };
+
   render() {
     const {
       imageHeight,
       imageWidth,
-      imageMortar,
+      imageBorder,
+      files,
       trimHeight,
       trimWidth,
-      firstColor,
-      saturation,
-      colorArray,
-      lightness,
-      secondColor,
-      colorMode,
-      colorHueMode,
-      mortarColor,
-      staggerImages,
-      save
+      borderColor
     } = this.props;
     let { canvasHeight, canvasWidth } = this.props;
     if (trimHeight)
-      canvasHeight = trimCanvasHeight(canvasHeight, imageHeight, imageMortar);
+      canvasHeight = trimCanvasHeight(canvasHeight, imageHeight, imageBorder);
     if (trimWidth)
-      canvasWidth = trimCanvasWidth(canvasWidth, imageWidth, imageMortar);
+      canvasWidth = trimCanvasWidth(canvasWidth, imageWidth, imageBorder);
     const images = imageLayer({
-      staggerImages,
       canvasHeight,
       canvasWidth,
       imageHeight,
       imageWidth,
-      imageMortar,
-      firstColor,
-      secondColor,
-      colorArray,
-      saturation,
-      lightness,
-      colorHueMode,
-      colorMode
+      imageBorder,
+      numberOfFiles: files.length
     });
     return (
       <div>
-        <button type="submit" onClick={save}>
+        <button type="submit" onClick={this.save}>
           Generate Download Link
         </button>
         <span id="download-div" />
@@ -57,7 +85,7 @@ export default class extends Component {
           </p>
           <p>
             Image Dimensions: {imageWidth} x {imageHeight} height, with a{' '}
-            {imageMortar} mortar
+            {imageBorder} border
           </p>
           <button
             style={{ marginBottom: 30 }}
@@ -70,22 +98,26 @@ export default class extends Component {
         <svg
           id="imagewall"
           width={canvasWidth}
-          style={{ backgroundColor: mortarColor }}
+          style={{ backgroundColor: borderColor }}
           height={canvasHeight}
           preserveAspectRatio="xMinYMax meet"
         >
           {images &&
-            images.map(({ x, y, fill }) => (
-              <rect
-                className="image"
-                width={imageWidth}
-                height={imageHeight}
-                key={`${x}+${y}`}
-                x={x}
-                y={y}
-                fill={fill}
-              />
-            ))}
+            images.map(({ x, y, fileIndex }) => {
+              return (
+                <image
+                  aria-label="image"
+                  className="image"
+                  width={imageWidth}
+                  height={imageHeight}
+                  key={`${x}+${y}`}
+                  x={x}
+                  y={y}
+                  xlinkHref={files.length && files[fileIndex].blob}
+                  alt="random"
+                />
+              );
+            })}
         </svg>
       </div>
     );
