@@ -55,7 +55,7 @@ export default class extends React.Component {
         zIndex: '2'
       },
       cover: {
-        position: 'fixed',
+        display: 'none',
         top: '0px',
         right: '0px',
         bottom: '0px',
@@ -75,7 +75,7 @@ export default class extends React.Component {
               type="submit"
               style={styles.cover}
               onClick={this.handleClose}
-            />
+            >Save</button>
             <SketchPicker
               color={backgroundColor}
               onChangeComplete={this.handleOnChangeComplete}
