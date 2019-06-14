@@ -15,6 +15,7 @@ export default function brickLayer({
   colorHueMode,
   colorMode
 }) {
+  if (brickWidth > canvasWidth || brickHeight > canvasHeight) return false;
   const coordinates = [];
   const xStart = -brickWidth / 2;
   const yIncrement = Math.round(brickHeight + brickMortar);
@@ -37,7 +38,7 @@ export default function brickLayer({
       break;
     case 'choose color from multiple':
       scale = () => {
-        if (colorArray === undefined || colorArray.length === 0) return null
+        if (colorArray === undefined || colorArray.length === 0) return null;
         return colorArray[Math.floor(Math.random() * colorArray.length)];
       };
       break;
@@ -49,7 +50,7 @@ export default function brickLayer({
   for (let y = 0; y <= yStartMaximum; y += yIncrement) {
     for (let x = xStart; x <= xStartMaximum; x += xIncrement) {
       const fill = scale(Math.random());
-      if (staggerBricks && (i % 2 !== 0)) {
+      if (staggerBricks && i % 2 !== 0) {
         coordinates.push({ x, y, fill });
       } else {
         coordinates.push({ x: x + brickWidth / 2, y, fill });

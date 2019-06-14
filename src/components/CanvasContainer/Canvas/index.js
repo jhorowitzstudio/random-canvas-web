@@ -30,6 +30,21 @@ export default class extends Component {
       canvasHeight = trimCanvasHeight(canvasHeight, brickHeight, brickMortar);
     if (trimWidth)
       canvasWidth = trimCanvasWidth(canvasWidth, brickWidth, brickMortar);
+    const bricks = brickLayer({
+      staggerBricks,
+      canvasHeight,
+      canvasWidth,
+      brickHeight,
+      brickWidth,
+      brickMortar,
+      firstColor,
+      secondColor,
+      colorArray,
+      saturation,
+      lightness,
+      colorHueMode,
+      colorMode
+    });
     return (
       <div>
         <button type="submit" onClick={save}>
@@ -44,40 +59,33 @@ export default class extends Component {
             Brick Dimensions: {brickWidth} x {brickHeight} height, with a{' '}
             {brickMortar} mortar
           </p>
-            <button style={{marginBottom:30}} type="submit" onClick={()=> this.setState({ _: Math.random() })}>Refresh</button>
+          <button
+            style={{ marginBottom: 30 }}
+            type="submit"
+            onClick={() => this.setState({ _: Math.random() })}
+          >
+            Refresh
+          </button>
         </div>
         <svg
           id="brickwall"
           width={canvasWidth}
-          style={{backgroundColor: mortarColor}}
+          style={{ backgroundColor: mortarColor }}
           height={canvasHeight}
           preserveAspectRatio="xMinYMax meet"
         >
-          {brickLayer({
-            staggerBricks,
-            canvasHeight,
-            canvasWidth,
-            brickHeight,
-            brickWidth,
-            brickMortar,
-            firstColor,
-            secondColor,
-            colorArray,
-            saturation,
-            lightness,
-            colorHueMode,
-            colorMode
-          }).map(({ x, y, fill }) => (
-            <rect
-              className="brick"
-              width={brickWidth}
-              height={brickHeight}
-              key={`${x}+${y}`}
-              x={x}
-              y={y}
-              fill={fill}
-            />
-          ))}
+          {bricks &&
+            bricks.map(({ x, y, fill }) => (
+              <rect
+                className="brick"
+                width={brickWidth}
+                height={brickHeight}
+                key={`${x}+${y}`}
+                x={x}
+                y={y}
+                fill={fill}
+              />
+            ))}
         </svg>
       </div>
     );
