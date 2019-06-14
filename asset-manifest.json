@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/brick-generator/static/css/main.1666a583.chunk.css",
-    "main.js": "/brick-generator/static/js/main.75e2bc93.chunk.js",
-    "main.js.map": "/brick-generator/static/js/main.75e2bc93.chunk.js.map",
+    "main.js": "/brick-generator/static/js/main.b4d5dff9.chunk.js",
+    "main.js.map": "/brick-generator/static/js/main.b4d5dff9.chunk.js.map",
     "runtime~main.js": "/brick-generator/static/js/runtime~main.92424d49.js",
     "runtime~main.js.map": "/brick-generator/static/js/runtime~main.92424d49.js.map",
     "static/css/2.20d67eb1.chunk.css": "/brick-generator/static/css/2.20d67eb1.chunk.css",
     "static/js/2.e748f981.chunk.js": "/brick-generator/static/js/2.e748f981.chunk.js",
     "static/js/2.e748f981.chunk.js.map": "/brick-generator/static/js/2.e748f981.chunk.js.map",
     "index.html": "/brick-generator/index.html",
-    "precache-manifest.ed9137be9f0672bc4501b83b6c5c8458.js": "/brick-generator/precache-manifest.ed9137be9f0672bc4501b83b6c5c8458.js",
+    "precache-manifest.20d68cc99ca5a4bd1e10e048a8834793.js": "/brick-generator/precache-manifest.20d68cc99ca5a4bd1e10e048a8834793.js",
     "service-worker.js": "/brick-generator/service-worker.js",
     "static/css/2.20d67eb1.chunk.css.map": "/brick-generator/static/css/2.20d67eb1.chunk.css.map",
     "static/css/main.1666a583.chunk.css.map": "/brick-generator/static/css/main.1666a583.chunk.css.map"
