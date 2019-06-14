@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
-import brickLayer from '../../../helpers/brickLayer';
+import imageLayer from '../../../helpers/imageLayer';
 import {
   trimCanvasWidth,
   trimCanvasHeight
@@ -9,9 +9,9 @@ import {
 export default class extends Component {
   render() {
     const {
-      brickHeight,
-      brickWidth,
-      brickMortar,
+      imageHeight,
+      imageWidth,
+      imageMortar,
       trimHeight,
       trimWidth,
       firstColor,
@@ -22,21 +22,21 @@ export default class extends Component {
       colorMode,
       colorHueMode,
       mortarColor,
-      staggerBricks,
+      staggerImages,
       save
     } = this.props;
     let { canvasHeight, canvasWidth } = this.props;
     if (trimHeight)
-      canvasHeight = trimCanvasHeight(canvasHeight, brickHeight, brickMortar);
+      canvasHeight = trimCanvasHeight(canvasHeight, imageHeight, imageMortar);
     if (trimWidth)
-      canvasWidth = trimCanvasWidth(canvasWidth, brickWidth, brickMortar);
-    const bricks = brickLayer({
-      staggerBricks,
+      canvasWidth = trimCanvasWidth(canvasWidth, imageWidth, imageMortar);
+    const images = imageLayer({
+      staggerImages,
       canvasHeight,
       canvasWidth,
-      brickHeight,
-      brickWidth,
-      brickMortar,
+      imageHeight,
+      imageWidth,
+      imageMortar,
       firstColor,
       secondColor,
       colorArray,
@@ -56,8 +56,8 @@ export default class extends Component {
             Actual Canvas Dimensions: {canvasWidth} x {canvasHeight} height
           </p>
           <p>
-            Brick Dimensions: {brickWidth} x {brickHeight} height, with a{' '}
-            {brickMortar} mortar
+            Image Dimensions: {imageWidth} x {imageHeight} height, with a{' '}
+            {imageMortar} mortar
           </p>
           <button
             style={{ marginBottom: 30 }}
@@ -68,18 +68,18 @@ export default class extends Component {
           </button>
         </div>
         <svg
-          id="brickwall"
+          id="imagewall"
           width={canvasWidth}
           style={{ backgroundColor: mortarColor }}
           height={canvasHeight}
           preserveAspectRatio="xMinYMax meet"
         >
-          {bricks &&
-            bricks.map(({ x, y, fill }) => (
+          {images &&
+            images.map(({ x, y, fill }) => (
               <rect
-                className="brick"
-                width={brickWidth}
-                height={brickHeight}
+                className="image"
+                width={imageWidth}
+                height={imageHeight}
                 key={`${x}+${y}`}
                 x={x}
                 y={y}

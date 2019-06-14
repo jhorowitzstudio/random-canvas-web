@@ -1,8 +1,8 @@
 {
-  "name": "bricks-generator",
+  "name": "images-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jhorowitzstudio.github.io/brick-generator",
+  "homepage": "https://jhorowitzstudio.github.io/random-canvas-web",
   "dependencies": {
     "chroma-js": "^2.0.3",
     "rc-slider": "^8.6.11",

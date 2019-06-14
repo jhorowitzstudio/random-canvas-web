@@ -12,7 +12,7 @@ function App() {
   return (
     <div style={styles.App} className="App">
       <header>
-        <h1>Brick Generator</h1>
+        <h1>Image Generator</h1>
       </header>
       <Interface />
       <CanvasContainer />

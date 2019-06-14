@@ -1,12 +1,12 @@
 import chroma from 'chroma-js';
 
-export default function brickLayer({
-  staggerBricks,
+export default function imageLayer({
+  staggerImages,
   canvasHeight,
   canvasWidth,
-  brickHeight,
-  brickWidth,
-  brickMortar,
+  imageHeight,
+  imageWidth,
+  imageMortar,
   firstColor,
   secondColor,
   colorArray,
@@ -15,12 +15,12 @@ export default function brickLayer({
   colorHueMode,
   colorMode
 }) {
-  if (brickWidth > canvasWidth || brickHeight > canvasHeight) return false;
+  if (imageWidth > canvasWidth || imageHeight > canvasHeight) return false;
   const coordinates = [];
-  const xStart = -brickWidth / 2;
-  const yIncrement = Math.round(brickHeight + brickMortar);
-  const xIncrement = Math.round(brickWidth + brickMortar);
-  const yStartMaximum = canvasHeight - brickHeight;
+  const xStart = -imageWidth / 2;
+  const yIncrement = Math.round(imageHeight + imageMortar);
+  const xIncrement = Math.round(imageWidth + imageMortar);
+  const yStartMaximum = canvasHeight - imageHeight;
   const xStartMaximum = canvasWidth;
   let scale;
   switch (colorHueMode) {
@@ -50,10 +50,10 @@ export default function brickLayer({
   for (let y = 0; y <= yStartMaximum; y += yIncrement) {
     for (let x = xStart; x <= xStartMaximum; x += xIncrement) {
       const fill = scale(Math.random());
-      if (staggerBricks && i % 2 !== 0) {
+      if (staggerImages && i % 2 !== 0) {
         coordinates.push({ x, y, fill });
       } else {
-        coordinates.push({ x: x + brickWidth / 2, y, fill });
+        coordinates.push({ x: x + imageWidth / 2, y, fill });
       }
     }
     i += 1;

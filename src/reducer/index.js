@@ -1,9 +1,9 @@
 import { initialState } from '../constants/defaults';
 import {
-  TOGGLE_STAGGER_BRICKS,
-  TOGGLE_BRICK_POPUP,
+  TOGGLE_STAGGER_IMAGES,
+  TOGGLE_IMAGE_POPUP,
   TOGGLE_CANVAS_POPUP,
-  SET_BRICK_DIMENSIONS,
+  SET_IMAGE_DIMENSIONS,
   SET_CANVAS_DIMENSIONS,
   TOGGLE_TRIM,
   SET_COLOR,
@@ -18,18 +18,18 @@ import {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case TOGGLE_STAGGER_BRICKS:
-      return { ...state, staggerBricks: !state.staggerBricks };
-    case TOGGLE_BRICK_POPUP:
-      return { ...state, brickDimensionsPopup: !state.brickDimensionsPopup };
+    case TOGGLE_STAGGER_IMAGES:
+      return { ...state, staggerImages: !state.staggerImages };
+    case TOGGLE_IMAGE_POPUP:
+      return { ...state, imageDimensionsPopup: !state.imageDimensionsPopup };
     case TOGGLE_CANVAS_POPUP:
       return { ...state, canvasDimensionsPopup: !state.canvasDimensionsPopup };
-    case SET_BRICK_DIMENSIONS:
+    case SET_IMAGE_DIMENSIONS:
       return {
         ...state,
-        brickHeight: action.payload.height || state.brickHeight,
-        brickWidth: action.payload.width || state.brickWidth,
-        brickMortar: action.payload.mortar
+        imageHeight: action.payload.height || state.imageHeight,
+        imageWidth: action.payload.width || state.imageWidth,
+        imageMortar: action.payload.mortar
       };
     case SET_CANVAS_DIMENSIONS:
       return {
