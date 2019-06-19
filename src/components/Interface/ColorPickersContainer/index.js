@@ -4,11 +4,10 @@ import ColorPickersOptions from './ColorPickersOptions';
 
 const ColorPickersContainer = props => (
   <div>
-    <h2>Colors</h2>
     <ColorPickersOptions {...props} />
   </div>
 );
 
-const mapStateToProps = ({ files }) => ({ files });
+const mapStateToProps = ({ files, borderTransparent }) => ({ files, borderTransparent });
 
 export default connect(mapStateToProps)(ColorPickersContainer);

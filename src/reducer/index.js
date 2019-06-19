@@ -7,11 +7,14 @@ import {
   ADD_TO_FILES,
   REMOVE_FROM_FILES,
   SET_COLOR,
-  SAVE_IMAGE
+  SAVE_IMAGE,
+  TOGGLE_BORDER_TRANSPARENT
 } from '../actions';
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case TOGGLE_BORDER_TRANSPARENT:
+      return { ...state, borderTransparent: !state.borderTransparent };
     case TOGGLE_IMAGE_POPUP:
       return { ...state, imageDimensionsPopup: !state.imageDimensionsPopup };
     case SET_IMAGE_DIMENSIONS:
@@ -34,7 +37,13 @@ export default function reducer(state = initialState, action) {
     case SAVE_IMAGE:
       return state;
     case ADD_TO_FILES:
-      return { ...state, files: [...state.files, {name: action.payload.name, blob: action.payload.blob}] };
+      return {
+        ...state,
+        files: [
+          ...state.files,
+          { name: action.payload.name, blob: action.payload.blob }
+        ]
+      };
     case REMOVE_FROM_FILES:
       return {
         ...state,

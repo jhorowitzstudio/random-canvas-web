@@ -46,7 +46,7 @@ export default class extends Component {
       document.getElementById('download-div').innerHTML = '';
     }
     document.body.addEventListener('click', fn, true);
-      document.getElementById('download-div').innerHTML = '';
+    document.getElementById('download-div').innerHTML = '';
     document.getElementById('download-div').appendChild(link);
   };
 
@@ -58,6 +58,7 @@ export default class extends Component {
       files,
       trimHeight,
       trimWidth,
+      borderTransparent,
       borderColor
     } = this.props;
     let { canvasHeight, canvasWidth } = this.props;
@@ -98,7 +99,7 @@ export default class extends Component {
         <svg
           id="imagewall"
           width={canvasWidth}
-          style={{ backgroundColor: borderColor }}
+          style={borderTransparent ? {} : { backgroundColor: borderColor }}
           height={canvasHeight}
           preserveAspectRatio="xMinYMax meet"
         >

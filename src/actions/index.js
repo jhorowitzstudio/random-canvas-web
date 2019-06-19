@@ -6,7 +6,11 @@ export const SET_COLOR = 'SET_COLOR';
 export const SAVE_IMAGE = 'SAVE_IMAGE';
 export const ADD_TO_FILES = 'ADD_TO_FILES';
 export const REMOVE_FROM_FILES = 'REMOVE_FROM_FILES';
+export const TOGGLE_BORDER_TRANSPARENT = 'TOGGLE_BORDER_TRANSPARENT';
 
+export const toggleBorderTransparent = () => ({
+  type: TOGGLE_BORDER_TRANSPARENT
+})
 export const toggleImageDimensionsPopup = () => ({
   type: TOGGLE_IMAGE_POPUP
 });

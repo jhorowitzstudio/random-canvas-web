@@ -22,6 +22,7 @@ export const initialState = {
   canvasWidth: 1000,
   imageDimensionsPopup: false,
   borderColor: '#FFFFFF',
+  borderTransparent: true,
   trimHeight: true,
   trimWidth: true
 };

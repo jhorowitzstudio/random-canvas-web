@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import ColorPicker from './ColorPicker';
 import FilePreview from './FilePreview';
 import MyDropzone from './MyDropzone';
-import { removeFromFiles, addToFiles } from '../../../../actions';
+import {
+  removeFromFiles,
+  addToFiles,
+  toggleBorderTransparent
+} from '../../../../actions';
 // import styles from './styles'
 
 class ColorPickersContainer extends React.Component {
@@ -19,17 +23,33 @@ class ColorPickersContainer extends React.Component {
     dispatch(addToFiles({ file: { name, blob } }));
   };
 
+  handleToggleBorderTransparent = () => {
+    const { dispatch } = this.props;
+    dispatch(toggleBorderTransparent());
+  };
+
   render() {
-    const { files } = this.props;
-    console.log(files);
+    const { files, borderTransparent } = this.props;
     return (
       <div>
         <h2>Background Color</h2>
-        <ColorPicker
-          colorName="borderColor"
-          header="Border Color"
-          {...this.props}
-        />
+        <div style={{margin:'20px 0px'}}>
+          <span style={{margin: '0px 10px 0px 0px'}}>Transparent Border</span>
+          <input
+            type="checkbox"
+            name="borderTransparent"
+            checked={borderTransparent}
+            onChange={this.handleToggleBorderTransparent}
+          />
+        </div>
+        {!borderTransparent && (
+          <ColorPicker
+            colorName="borderColor"
+            header="Border Color"
+            {...this.props}
+          />
+        )}
+        <h2>Images</h2>
         <MyDropzone handleUpload={this.handleUpload} />
         <div style={{ maxWidth: 800 }}>
           <div
@@ -42,7 +62,7 @@ class ColorPickersContainer extends React.Component {
           >
             {files.map((file, index) => {
               return (
-                <div key={index + file} style={{border: '1px solid grey'}}>
+                <div key={index + file} style={{ border: '1px solid grey' }}>
                   <FilePreview
                     index={index}
                     key={index + file}

@@ -19,7 +19,8 @@ const mapStateToProps = ({
   imageBorder,
   trimHeight,
   trimWidth,
-  borderColor
+  borderColor,
+  borderTransparent
 }) => ({
   files,
   canvasHeight,
@@ -29,7 +30,8 @@ const mapStateToProps = ({
   imageBorder,
   trimHeight,
   trimWidth,
-  borderColor
+  borderColor,
+  borderTransparent
 });
 
 export default connect(mapStateToProps)(ColorPickersContainer);
