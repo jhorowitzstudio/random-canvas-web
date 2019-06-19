@@ -4,7 +4,6 @@ export default props => {
   const {
     file: { blob }
   } = props;
-  console.log(blob);
   return (
     <div width="100px" height="100px">
       <img
