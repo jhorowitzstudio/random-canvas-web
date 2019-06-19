@@ -60,7 +60,7 @@ export default class extends Component {
       <div>
         <h2>Image Dimensions</h2>
         <p>
-          <em>Images will maintain their original aspect ratio, so dimensions entered below that don't match an image's aspect ratio will create a border added to the image's height or width.</em>
+          <em>Images will maintain their original aspect ratio, so dimensions entered below that don&apos;t match an image&apos;s aspect ratio will create a border added to the image&apos;s height or width.</em>
         </p>
         <div
           style={{
